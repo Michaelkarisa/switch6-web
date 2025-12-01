@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { useMediaQuery } from 'usehooks-ts';
-
+import Splash from './Splash';
 const StreamSwitchLanding = () => {
   const [splash, setSplash] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -161,20 +161,8 @@ const StreamSwitchLanding = () => {
   ];
 
   if (splash) {
-    let splashImage = 'assets/splash2.webp';
-    if (window.innerWidth < 700) splashImage = 'assets/splash.webp';
-    if (window.innerWidth > 700) splashImage = 'assets/splash1.webp';
 
-    return (
-      <div className="bg-black min-h-screen flex items-center justify-center">
-        <img
-          src={splashImage}
-          alt="Splash"
-          className="max-w-full max-h-full object-contain"
-          loading="eager"
-        />
-      </div>
-    );
+    return <Splash />;;
   }
 
   return (
@@ -525,5 +513,6 @@ const PricingCard = () => (
     </Button>
   </Card>
 );
+
 
 export default StreamSwitchLanding;
